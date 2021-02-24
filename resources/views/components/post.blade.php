@@ -9,8 +9,6 @@
 
 
 
-
-    
     @can('delete', $post)
         <form action="{{ route('posts.destroy', $post) }}" method="post">
             @csrf
@@ -18,8 +16,8 @@
             <button type="submit" class="text-blue-500">Delete</button>
         </form>
     @endcan
-    
-   
+
+
 
 
 
@@ -38,7 +36,7 @@
     </form>
     @endif
 
-   
+
 
 
     @endauth
