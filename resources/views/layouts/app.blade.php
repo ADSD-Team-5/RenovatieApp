@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posty</title>
+    <title>Renovatie App</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css')}}">
 </head>
@@ -11,13 +11,13 @@
     <nav class="p-6 bg-white flex justify-between mb-6">
 <ul class="flex items-center">
 <li>
-    <a href="" class="p-3" >Home</a>
+    <a href="{{ route('home') }}" class="p-3" >Home</a>
 </li>
 <li>
     <a href="{{ route('dashboard') }}" class="p-3" >Dashboard</a>
 </li>
 <li>
-    <a href="{{ route('posts') }}" class="p-3" >Posts</a>
+    <a href="{{ route('modules') }}" class="p-3" >Modules</a>
 </li>
 
 
@@ -27,7 +27,7 @@
 <ul class="flex items-center">
     @auth
     <li>
-        <a href="" class="p-3" >{{ auth()->user()->name }}</a>
+        <a href=" {{ route('users.modules', auth()->user()->username) }} " class="p-3" >{{ auth()->user()->name }}</a>
     </li>
     <li>
         <form action="{{ route('logout') }}" method="post" class="inline">
@@ -45,9 +45,9 @@
         <a href="{{ route('register')}}" class="p-3" >Register</a>
     </li>
     @endguest
-    
-    
-    
+
+
+
     </ul>
     </nav>
     @yield('content')
